@@ -107,7 +107,7 @@ function checkVisible() {
 
 window.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', checkVisible);
-    checkVisible(); 
+    checkVisible();
 });
 
 
@@ -118,8 +118,16 @@ function GetRandom(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 function MoveSIGN() {
-    CAUTIONSIGN.style.left = GetRandom(0, 1370) + "px";
-    CAUTIONSIGN.style.top = GetRandom(0, 500) + "px";
+    const gameArea = document.querySelector(".gameback");
+    const areaRect = gameArea.getBoundingClientRect();
+    const signWidth = CAUTIONSIGN.offsetWidth;
+    const signHeight = CAUTIONSIGN.offsetHeight;
+
+    const maxX = areaRect.width - signWidth;
+    const maxY = areaRect.height - signHeight;
+
+    CAUTIONSIGN.style.left = GetRandom(0, maxX) + "px";
+    CAUTIONSIGN.style.top = GetRandom(0, maxY) + "px";
 }
 
 
@@ -235,4 +243,4 @@ function toggleMenus() { /*open and close menu*/
         hamBtn.innerHTML = "Open Menu"; //change button text open menu
     }
 }
-    show(1);
+show(1);

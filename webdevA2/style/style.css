@@ -615,7 +615,7 @@ header h4 {
     }
 
     #CAUTIONSIGN {
-        display: block;
+        display: relative;
         margin: 20px auto;
     }
 
