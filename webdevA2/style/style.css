@@ -1,0 +1,631 @@
+@font-face {
+    font-family: basics;
+    src: url("../fonts/NeovixBasic-JByo.ttf");
+}
+
+* {
+    font-family: basics;
+}
+
+
+
+body {
+    margin: 0;
+    background-image: linear-gradient(grey, lightblue);
+}
+
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+
+header h4 {
+    position: absolute;
+    left: 10%;
+    bottom: 0px;
+    font-size: 1.6rem;
+}
+
+.styling1 {
+    width: 100%;
+}
+
+
+/* buttons */
+
+
+.buttonsmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+
+.buttonsmenu li {
+    list-style: none;
+}
+
+.selectorbutton1,
+.selectorbutton2 {
+    display: inline-block;
+}
+
+
+.selectorbutton1 {
+    margin-left: 850px;
+    width: 100px;
+    height: 80px;
+    background-color: #2a2869;
+    color: aliceblue;
+    transition: 1s;
+    border-style: solid;
+    border-radius: 5px;
+    display: inline;
+
+}
+
+.selectorbutton1:hover {
+    transform: scale(1.05);
+    background-color: aliceblue;
+    color: #2a2869;
+}
+
+.selectorbutton2 {
+    width: 100px;
+    height: 80px;
+    background-color: #2a2869;
+    color: aliceblue;
+    transition: 1s;
+    border-style: solid;
+    border-radius: 5px;
+    display: inline;
+
+}
+
+.selectorbutton2:hover {
+    transform: scale(1.05);
+    background-color: aliceblue;
+    color: #2a2869;
+}
+
+#hamIcon {
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* Splash Screen Effect for intro */
+
+.intro {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #2a2869;
+    transition: 1.5s;
+}
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50, -50);
+    color: white;
+}
+
+
+.logo {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 1s;
+
+
+}
+
+.logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 1s;
+}
+
+.titlebackground {
+    background-color: #2a2869;
+    color: white;
+    position: sticky;
+    z-index: 1;
+
+
+}
+
+/* the slide pic box*/
+
+.mySlides {
+    display: none;
+}
+
+.slide {
+    max-width: 990px;
+    position: relative;
+    left: 257.5px;
+    /* display: inline-block; */
+}
+
+.nextbutton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    padding: 16px;
+    margin-top: -22px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    /* user select makes it so that u cant highlight the button when u double click it*/
+    user-select: none;
+    color: aliceblue;
+}
+
+.prevbutton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    padding: 16px;
+    margin-top: -22px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    /* user select makes it so that u cant highlight the button when u double click it*/
+    user-select: none;
+    color: aliceblue;
+}
+
+.nextbutton {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prevbutton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nextbutton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* what is a natural disaster*/
+.flip-card {
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 450px;
+    height: 300px;
+    perspective: 1000px;
+    display: inline-block;
+
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+    background-color: #2a2869;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: larger;
+    text-align: left;
+}
+
+
+/*info section on natruall*/
+
+.boxes {
+    display: inline;
+}
+
+.boxes-for-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 95%;
+    height: 1000px;
+    padding: 5px;
+
+
+
+}
+
+#page1 {
+    background-color: beige;
+
+
+}
+
+#page2 {
+    background-color: beige;
+
+}
+
+#page3 {
+    background-color: beige;
+
+}
+
+#page4 {
+    background-color: beige;
+
+
+}
+
+#page5 {
+    background-color: beige;
+
+}
+
+
+.titleheader {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 70px;
+}
+
+.aboutit {
+    grid-column: 1/3;
+    grid-row: 2/4;
+    font-size: x-large;
+}
+
+.aboutit2 {
+    grid-column: 2/6;
+    grid-row: 4/6;
+    font-size: x-large;
+}
+
+.imggif {
+    grid-column: 3/5;
+    grid-row: 2/4;
+
+}
+
+.imgsecond {
+    grid-row: 4/6;
+    grid-column: 1/2;
+}
+
+.infoheader {
+    grid-row: 6/7;
+    grid-column: 1/6;
+    margin: 0%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.survivaltip {
+    grid-row: 7/8;
+    grid-column: 1/6;
+    font-size: x-large;
+
+
+}
+
+.Safetybagtitle {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.item1 {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    width: 100%;
+    transform: translateX(-100px);
+    transition: all 1s ease-in;
+    opacity: 0;
+    margin-top: 50px;
+
+
+}
+
+.item1.visible {
+    transform: translateX(0);
+    opacity: 1;
+    font-size: 30px;
+}
+
+.Titlewater {
+    width: 80%;
+    text-align: center;
+    align-content: center;
+
+}
+
+.waterimg {
+    width: auto;
+    height: 300px;
+    max-width: 100%;
+}
+
+
+.gameback {
+    background-image: url('../images/WORLDMAP.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+
+}
+
+#startBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#CAUTIONSIGN {
+    position: relative;
+}
+
+@media (max-width:800px) {
+
+    /* General body styling */
+    body {
+        font-size: 16px;
+        background-image: linear-gradient(white, lightblue);
+    }
+
+    header {
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header h4 {
+        position: static;
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    /* Navigation menu */
+    .buttonsmenu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .buttonsmenu.menuShow {
+        display: flex;
+        /* show menu when class added */
+    }
+
+    .buttonsmenu li {
+        margin: 10px 0;
+    }
+
+    .selectorbutton1,
+    .selectorbutton2 {
+        width: 90%;
+        height: 50px;
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    #hamIcon {
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Slideshow */
+    .slide {
+        max-width: 100%;
+        left: 0;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+
+
+    }
+
+    .styling1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .nextbutton,
+    .prevbutton {
+        width: auto;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    /* Flip cards */
+    .flip-card {
+        display: none;
+
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        display: none;
+
+    }
+
+    /* Boxes (disaster pages) */
+    .boxes-for-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        width: 95%;
+        padding: 10px;
+        height: 900px;
+
+    }
+
+    .titleheader {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    /* .aboutit,
+    .aboutit2,
+    .survivaltip {
+        grid-column: auto;
+        grid-row: auto;
+        width: 90%;
+        margin: 0 auto 20px auto;
+        font-size: 1rem;
+        text-align: justify;
+
+
+
+    } */
+    .aboutit {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: justify;
+        grid-column: 1/6;
+        grid-row: 2/4;
+    }
+
+
+
+
+    .imggif,
+    .imgsecond iframe,
+    .imgsecond img {
+        width: 100%;
+        height: auto;
+
+        max-width: 100%;
+    }
+
+    .imgsecond {
+        grid-column: 1/5;
+        grid-row: 4/6;
+        height: 200px;
+        width: 100%;
+  
+    }
+
+    /* Survival kit */
+    .item1 {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+        margin: 20px auto;
+        opacity: 1;
+        /* always visible on load */
+        transform: translateX(0);
+    }
+
+    .Titlewater {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .waterimg {
+        height: auto;
+        max-height: 200px;
+    }
+
+    /* Game section */
+    .gameback {
+        height: auto;
+        min-height: 400px;
+        background-size: contain;
+        padding: 10px;
+    }
+
+    #startBtn {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    #scoreBox {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #CAUTIONSIGN {
+        display: block;
+        margin: 20px auto;
+    }
+
+    .imggif {
+        display: none;
+    }
+
+    .aboutit2 {
+        display: none;
+    }
+
+
+}
